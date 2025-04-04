@@ -1,5 +1,7 @@
 ### Obtener lista de películas
 GET http://localhost:3000/peliculas
+### Buscar una pelicula por titulo
+GET http://localhost:3000/peliculas/search?titulo=Pulp
 
 ### Obtener una película
 GET http://localhost:3000/peliculas/67dbfea907ac70d20539ba7b

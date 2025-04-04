@@ -1,10 +1,11 @@
 import express from "express";
-import { listarPeliculas,obtenerPeliculaPorId, agregarPelicula, modificarPelicula, borrarPelicula } from "../controllers/peliculas.controller.js";
+import { listarPeliculas, buscarPeliculasPorTitulo, obtenerPeliculaPorId, agregarPelicula, modificarPelicula, borrarPelicula } from "../controllers/peliculas.controller.js";
 import { verificarToken, verificarAdmin } from "../middlewares/auth.middleware.js";
 
 const router = express.Router();
 
 router.get("/", listarPeliculas);
+router.get("/search", buscarPeliculasPorTitulo);
 router.get("/:id", obtenerPeliculaPorId);
 router.post("/", verificarToken, agregarPelicula);
 router.put("/:id", verificarToken, verificarAdmin, modificarPelicula);
