@@ -19,7 +19,9 @@ export const modificarPelicula = async (req, res) => {
     const { id } = req.params;
     const { titulo, director, año, generos, actores } = req.body;
 
-    const resultado = await peliculasCollection().updateOne({ _id: id }, { $set: { titulo, director, año, generos, actores } });
+    const resultado = await peliculasCollection().updateOne(
+        { _id: id }, { $set: { titulo, director, año, generos, actores } }
+    );
 
     if (!resultado.matchedCount) return res.status(404).json({ error: "Película no encontrada" });
     res.json({ mensaje: "Película actualizada con éxito" });

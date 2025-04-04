@@ -3,8 +3,8 @@ POST http://localhost:3000/usuarios/register
 Content-Type: application/json
 
 {
-    "nombre": "Alex", 
-    "email": "alex@example.com",
+    "nombre": "Campos", 
+    "email": "campos@example.com",
     "password": "123456"
 }
 
@@ -20,12 +20,15 @@ Content-Type: application/json
 
 ### Obtener lista de usuarios (Requiere token)
 GET http://localhost:3000/usuarios
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2N2VlNDIwZmRkNzNlNGQwZWE1NWUwYzciLCJyb2wiOiJhZG1pbiIsImlhdCI6MTc0MzY4MDA4MSwiZXhwIjoxNzQzNjgzNjgxfQ.XP7tI4teefGPfofs6V-8WwxLtxHogVE3mXFQ65t-_YE
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2N2VlNDIwZmRkNzNlNGQwZWE1NWUwYzciLCJyb2wiOiJhZG1pbiIsImlhdCI6MTc0Mzc1NTA5MywiZXhwIjoxNzQzNzc2NjkzfQ.ruGB9i--VKAmaEWDso1dVj4EiVSSUj1WFx4hky7Gwi4
+
 ### Obtener lista de usuarios
 GET http://localhost:3000/usuarios
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2N2VlNDIwZmRkNzNlNGQwZWE1NWUwYzciLCJyb2wiOiJhZG1pbiIsImlhdCI6MTc0MzY3MDc0MywiZXhwIjoxNzQzNjc0MzQzfQ.Q-mbC2xZXFWo9t2Tz2Wl-eWwh-dL7PcTBGzsbqYqjGA
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2N2VlNDIwZmRkNzNlNGQwZWE1NWUwYzciLCJyb2wiOiJhZG1pbiIsImlhdCI6MTc0Mzc1NTA5MywiZXhwIjoxNzQzNzc2NjkzfQ.ruGB9i--VKAmaEWDso1dVj4EiVSSUj1WFx4hky7Gwi4
+
 ### Obtener lista de películas
 GET http://localhost:3000/peliculas
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2N2VlNDIwZmRkNzNlNGQwZWE1NWUwYzciLCJyb2wiOiJhZG1pbiIsImlhdCI6MTc0Mzc1NTA5MywiZXhwIjoxNzQzNzc2NjkzfQ.ruGB9i--VKAmaEWDso1dVj4EiVSSUj1WFx4hky7Gwi4
 
 ### Agregar película con datos incompletos, dará error (Requiere token)
 POST http://localhost:3000/peliculas
@@ -37,20 +40,20 @@ Content-Type: application/json
 }
 ### Agregar película con datos completos (Requiere token)
 POST http://localhost:3000/peliculas
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2N2VlNDIwZmRkNzNlNGQwZWE1NWUwYzciLCJyb2wiOiJhZG1pbiIsImlhdCI6MTc0MzY4MDA4MSwiZXhwIjoxNzQzNjgzNjgxfQ.XP7tI4teefGPfofs6V-8WwxLtxHogVE3mXFQ65t-_YE
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2N2VlNDIwZmRkNzNlNGQwZWE1NWUwYzciLCJyb2wiOiJhZG1pbiIsImlhdCI6MTc0Mzc1NTA5MywiZXhwIjoxNzQzNzc2NjkzfQ.ruGB9i--VKAmaEWDso1dVj4EiVSSUj1WFx4hky7Gwi4
 Content-Type: application/json
 
 {
-    "titulo": "La vaquilla",
-    "director": "Luis Garcia Berlanga",
-    "año": 2010,
-    "generos": ["Comedia", "Historia"],
+    "titulo": "Último tango en París",
+    "director": "Bernardo Bertolucci",
+    "año": 1977,
+    "generos": ["Drama"],
     "actores": ["Leonardo DiCaprio", "Joseph Gordon-Levitt", "Ellen Page"]
 }
 
 ### Modificar película (Requiere token y permisos de admin)
 PUT http://localhost:3000/peliculas/67ee4d6a3400fe1f890f0c7d
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2N2VlNDIwZmRkNzNlNGQwZWE1NWUwYzciLCJyb2wiOiJhZG1pbiIsImlhdCI6MTc0MzY4MDA4MSwiZXhwIjoxNzQzNjgzNjgxfQ.XP7tI4teefGPfofs6V-8WwxLtxHogVE3mXFQ65t-_YE
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2N2VlNDIwZmRkNzNlNGQwZWE1NWUwYzciLCJyb2wiOiJhZG1pbiIsImlhdCI6MTc0Mzc1NTA5MywiZXhwIjoxNzQzNzc2NjkzfQ.ruGB9i--VKAmaEWDso1dVj4EiVSSUj1WFx4hky7Gwi4
 Content-Type: application/json
 
 {
