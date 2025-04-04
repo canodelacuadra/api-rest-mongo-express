@@ -1,3 +1,9 @@
+### Obtener lista de películas
+GET http://localhost:3000/peliculas
+
+### Obtener una película
+GET http://localhost:3000/peliculas/67dbfea907ac70d20539ba7b
+
 ### Registro de usuario
 POST http://localhost:3000/usuarios/register
 Content-Type: application/json
